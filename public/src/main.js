@@ -78,9 +78,9 @@ var Card = Backbone.View.extend({
   },
   
   fieldError: function ($field) {
-    $field.addClass('error');
+    $field.addClass('errorbg');
     setTimeout(function () {
-      $field.removeClass('error');
+      $field.removeClass('errorbg');
     }, 2000);
   },
   

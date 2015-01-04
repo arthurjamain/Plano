@@ -83,7 +83,7 @@ a:hover {
   -webkit-transition: background 400ms ease-in-out;
 }
 
-.forms input.error {
+.forms input.errorbg {
   background: #FFF0F0;
 }
 
