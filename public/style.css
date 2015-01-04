@@ -1,0 +1,142 @@
+body {
+  background: #FFF;
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", "Arial";
+  color: #444;
+}
+
+h1, h2 {
+  font-weight: normal;
+  margin: 0;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  font-weight: lighter;
+  border-bottom: 1px solid #CCC;
+  padding-bottom: 15px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+a {
+  color: #444;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: 500px; 
+  margin: 0 auto;
+  padding-top: 50px;
+  perspective: 1000px;
+}
+
+.card {
+  margin-top: 80px;
+  padding: 20px;
+  height: 330px;
+  border: 1px solid #CCC;
+  position: relative;
+  box-shadow: 0 0 10px -6px;
+  -webkit-transition: -webkit-transform 400ms ease-in-out;
+  -webkit-transform-style: preserve-3d;
+}
+.card.flipped {
+  -webkit-transform: rotate3d(0, 1, 0, 180deg);
+}
+
+.forms, .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.forms label {
+  margin-bottom: 5px;
+  display: block;
+  font-weight: lighter;
+  color: #888;
+  font-size: 12px;
+}
+
+.forms input {
+  width: 100%;
+  margin-bottom: 20px;
+  margin: 0 0 20px 0;
+  box-sizing: border-box;
+  border: 1px solid #BBB;
+  padding: 5px;
+  color: #888;
+  -webkit-transition: background 400ms ease-in-out;
+}
+
+.forms input.error {
+  background: #FFF0F0;
+}
+
+.forms button {
+  float: right;
+}
+
+.forms .register, .forms .login {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px 130px;
+  -webkit-transition: -webkit-transform 400ms ease-in-out;
+}
+
+.forms .register .error,
+.forms .login .error {
+  color: #C06464;
+  font-size: 12px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in-out;
+}
+
+.forms .switch {
+  font-size: 12px;
+}
+
+.forms .register {
+  -webkit-transform: translateX(500px);
+}
+.forms .login {
+}
+.forms.alt .register {
+  -webkit-transform: translateX(0);
+}
+.forms.alt .login {
+  -webkit-transform: translateX(-500px);
+}
+
+.content {
+  z-index: 1;
+  -webkit-transform: rotate3d(0, 1, 0, 180deg);
+}
+
+.content p {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.content .logout {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}

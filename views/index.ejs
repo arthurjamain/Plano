@@ -10,20 +10,61 @@
   </head>
   
   <body>
+    
     <div class="container">
-    
-      <div class="login">
-        <label for="email">Login :</label>
-        <input type="text" name="email" class="input email" />
-        <label for="email">Password :</label>
-        <input type="text" name="email" class="input email" />
-      </div>
       
-      <div class="content">
-        <p>Logged in content ! :)</p>
+      <h1>Plano</h1>
+      <h2>Proud leaders in Login solutions</h2>
+
+      <div class="card <%= loggedIn ? 'flipped' : ''; %>">
+        <div class="forms">
+          <div class="login">
+            
+            <h3>Login</h3>
+            <p class="error">Wrong login or password</p>
+            <label for="email">Login (e-mail address) :</label>
+            <input type="text" name="email" class="input email" />
+            <label for="password">Password :</label>
+            <input type="password" name="password" class="input password" />
+
+            <button class="submit">Login</button>
+            
+            <a href="#" class="switch">Or register</a>
+          </div>
+          <div class="register">
+            
+            <h3>Register</h3>
+            <p class="error">Wrong login or password</p>
+            <label for="email">Login (e-mail address) :</label>
+            <input type="text" name="email" class="input email" />
+            <label for="password">Password :</label>
+            <input type="password" name="password" class="input password" />
+            <label for="confirm-password">Confirm Password :</label>
+            <input type="password" name="confirm-password" class="input confirm-password" />
+
+            <button class="submit">Register</button>
+            
+            <a href="#" class="switch">Or login</a>
+          </div>
+        </div>
+
+        <div class="content">
+          <% if (loggedIn) { %>
+            <p>Logged in as <%= user.login %> !</p>
+            <a href="#" class="logout">Logout</a>
+          <% } else { %>
+            <p>Not logged in :(</p>
+          <% } %>
+        </div>
       </div>
-    
     </div>
+    
+    <script type="text/javascript" src="src/lib/jquery.js"></script>
+    <script type="text/javascript" src="src/lib/underscore.js"></script>
+    <script type="text/javascript" src="src/lib/backbone.js"></script>
+    
+    <script type="text/javascript" src="src/main.js"></script>
+    
   </body>
 
 </html>
