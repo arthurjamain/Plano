@@ -1,3 +1,3 @@
 # Plano
 
-Test project for Planorama.
+Test project.
